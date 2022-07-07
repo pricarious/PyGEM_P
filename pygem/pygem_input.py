@@ -52,7 +52,7 @@ if ref_spinupyears > 0:
 
 # Simulation runs (refers to period of simulation and needed separately from reference year to account for bias adjustments)
 gcm_startyear = 2000            # first year of model run (simulation dataset)
-gcm_endyear = 2100              # last year of model run (simulation dataset)
+gcm_endyear = 2019              # last year of model run (simulation dataset)
 gcm_wateryear = 'calendar'      # options for years: 'calendar', 'hydro', 'custom'
 gcm_spinupyears = 0             # spin up years for simulation (output not set up for spinup years at present)
 constantarea_years = 0          # number of years to not let the area or volume change
@@ -69,7 +69,7 @@ if hindcast:
 #%% ===== CALIBRATION OPTIONS =====
 # Calibration option ('emulator', 'MCMC', 'HH2015', 'HH2015mod')
 #option_calibration = 'MCMC'
-option_calibration = 'emulator'
+option_calibration = 'HH2015mod'
 
 # Prior distribution (specify filename or set equal to None)
 priors_reg_fullfn = main_directory + '/../Output/calibration/priors_region.csv'
@@ -194,7 +194,7 @@ icethickness_cal_frac_byarea = 0.9  # Regional glacier area fraction that is use
 
 #%% ===== SIMULATION AND GLACIER DYNAMICS OPTIONS =====
 # Glacier dynamics scheme (options: 'OGGM', 'MassRedistributionCurves', None)
-option_dynamics = 'OGGM'
+option_dynamics = None
     
 # MCMC options
 if option_calibration == 'MCMC':
